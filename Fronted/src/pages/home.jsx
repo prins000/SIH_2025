@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/navbar";
 import bgImg from "../assets/SIH-IMG.png";
 import { TypeAnimation } from 'react-type-animation';
+import Placecategoryslider from "../components/Placecategoryslider";
 
 const home = () => {
   const destinations = [
@@ -274,6 +275,7 @@ const cuisines = [
 
       </div>
 
+      <Placecategoryslider />
 
     </div>
   );

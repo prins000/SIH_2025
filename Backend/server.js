@@ -26,6 +26,36 @@ app.get("/", (req, res) => {
     res.send("Backend is running");
 });
 
+// get all places related to category
+app.get("/api/category/:category", async (req, res) => {
+    const { category } = req.params;
+
+    try {
+        const places = await Place.find({ category });
+        res.json(places);
+    } catch (error) {
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
+// perticular place details
+app.get("/api/places/:id", async (req, res) => {
+
+  const { id } = req.params;
+
+    try {
+      const place = await Place.findById(id);
+      if (!place) {
+        return res.status(404).json({ error: "Place not found" });
+      }
+
+      res.json(place);
+    } catch (error) {
+      console.error("❌ Error fetching place details:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+
+  });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
