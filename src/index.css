@@ -1,0 +1,13 @@
+@import "tailwindcss";
+body{
+    font-family: "Baloo Bhai 2", sans-serif;;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}
