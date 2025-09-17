@@ -7,6 +7,7 @@ import Fes from "../components/fes/fes";
 import Des from "../components/des/des";
 import Adv from "../components/adven/adv";
 import Cus from "../components/cuisine/cus";
+import CategoryPage from "./categoryPage";
 
 const home = () => {
   
@@ -47,6 +48,7 @@ const home = () => {
         <Fes />
         <Adv/>
         <Cus/>
+        <CategoryPage/>
       </div>
 
       <Footer/>

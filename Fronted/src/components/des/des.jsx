@@ -32,6 +32,9 @@ const des = () => {
           <h2 className="text-3xl font-bold text-center text-green-900 mb-10">
             Popular Destinations in Jharkhand
           </h2>
+          <button onClick={() => navigate('/category/Most-Popular-Places/Show-All-Places')} className="block mx-auto mb-8 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full">
+            View All Destinations
+          </button>
           {/* Mobile Swiper */}
           <div className="md:hidden px-6">
             <Swiper
@@ -40,7 +43,7 @@ const des = () => {
               spaceBetween={12}
               slidesPerView={1.1}
             >
-              {destinations.map((dest) => (
+              {destinations.slice(0, 3).map((dest) => (
                 <SwiperSlide key={dest._id}>
                   <div className="relative h-72 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
                     <img
@@ -61,7 +64,7 @@ const des = () => {
 
           {/* Desktop Grid */}
           <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 md:px-16">
-            {destinations.map((dest) => (
+            {destinations.slice(0, 3).map((dest) => (
               <div key={dest._id} className="relative h-72 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
                 <img
                   src={dest.image}
