@@ -27,7 +27,7 @@ const festivals = [
   },
 ];
 
-const fes = () => {
+const Fes = () => {
 
   
   return (
@@ -94,4 +94,4 @@ const fes = () => {
   )
 }
 
-export default fes
+export default Fes;

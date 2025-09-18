@@ -33,7 +33,7 @@ const cuisines = [
     }
   ];
 
-const cus = () => {
+const Cus = () => {
   return (
     <div>
 
@@ -93,4 +93,4 @@ const cus = () => {
   )
 }
 
-export default cus
+export default Cus;

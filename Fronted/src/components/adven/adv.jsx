@@ -39,7 +39,7 @@ const adventurePlaces = [
   }
 ];
 
-const adv = () => {
+const Adv = () => {
 
 
   return (
@@ -100,4 +100,4 @@ const adv = () => {
   )
 }
 
-export default adv;
+export default Adv;

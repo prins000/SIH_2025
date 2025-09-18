@@ -6,18 +6,21 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
-const des = () => {
+const Des = ({ mainCategory }) => {
 
   const [destinations, setDestinations] = useState([]);
+
+  const category = mainCategory;
+  console.log(category);
 
   const navigate = useNavigate();
 
  useEffect(() => {
-    fetch('http://localhost:5000/api/category/Most-Popular-Places')
+    fetch(`http://localhost:5000/api/category/${category}`)
       .then(response => response.json())
       .then(data => setDestinations(data))
       .catch(error => console.error('Error fetching destinations:', error));
-  }, []);
+  }, [category]);
 
   // const handleExploreClick = (id) => {
   //   navigate(`/places/${id}`);
@@ -32,7 +35,7 @@ const des = () => {
           <h2 className="text-3xl font-bold text-center text-green-900 mb-10">
             Popular Destinations in Jharkhand
           </h2>
-          <button onClick={() => navigate('/category/Most-Popular-Places/Show-All-Places')} className="block mx-auto mb-8 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full">
+          <button onClick={() => navigate(`/category/${category}/Show-All-Places`)} className="block mx-auto mb-8 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full">
             View All Destinations
           </button>
           {/* Mobile Swiper */}
@@ -87,4 +90,4 @@ const des = () => {
   )
 }
 
-export default des;
+export default Des;

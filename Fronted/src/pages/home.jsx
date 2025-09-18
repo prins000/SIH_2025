@@ -3,13 +3,14 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footbar";
 import bgImg from "../assets/SIH-IMG.png";
 import { TypeAnimation } from 'react-type-animation';
-import Fes from "../components/fes/fes";
-import Des from "../components/des/des";
-import Adv from "../components/adven/adv";
-import Cus from "../components/cuisine/cus";
+import Fes from "../components/fes/Fes";
+import Des from "../components/des/Des";
+import Adv from "../components/adven/Adv";
+import Cus from "../components/cuisine/Cus";
 import CategoryPage from "./categoryPage";
+import VideoCarousel from "../components/VideoCarousel";
 
-const home = () => {
+const Home = () => {
   
 
   return (
@@ -44,11 +45,12 @@ const home = () => {
 
       <div className="slides ">
         
-        <Des/>
+        <Des mainCategory="Most-Popular-Places"/>
         <Fes />
         <Adv/>
         <Cus/>
-        <CategoryPage/>
+        {/* <CategoryPage/> */}
+        <VideoCarousel/>
       </div>
 
       <Footer/>
@@ -58,4 +60,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
