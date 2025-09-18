@@ -7,7 +7,6 @@ import Fes from "../components/fes/Fes";
 import Des from "../components/des/Des";
 import Adv from "../components/adven/Adv";
 import Cus from "../components/cuisine/Cus";
-import CategoryPage from "./categoryPage";
 import VideoCarousel from "../components/VideoCarousel";
 
 const Home = () => {
