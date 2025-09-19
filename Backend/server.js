@@ -165,7 +165,7 @@ app.get("/api/place/addData", async (req, res) => {
       history: "Lodh Falls, also known as Burha Ghagh Falls, has been a significant natural attraction in Jharkhand for many years. The falls are named after the nearby Lodh village and have been a part of local folklore. The area around Lodh Falls is rich in biodiversity and has been a popular destination for tourists seeking tranquility and adventure. Over the years, it has attracted visitors for its scenic beauty, trekking opportunities, and the thrilling experience of witnessing the powerful cascade of water.",
       visitingHours: "6 AM to 6 PM",
       location: "Latehar District, Jharkhand",
-      images: [],
+      images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758271267/lodh-waterfalls-ranchi-jharkhand-2-musthead-hero_iymqqm.jpg","https://res.cloudinary.com/doh9wcybz/image/upload/v1758271266/lodh-waterfalls-ranchi-jharkhand-1-attr-hero_zlbpm7.jpg","https://res.cloudinary.com/doh9wcybz/image/upload/v1758271266/lodh-waterfalls-ranchi-jharkhand-3-attr-hero_z1l8ct.jpg"],
       bestTimeToVisit: "July – October",
       category: ["Waterfalls-Scenic-Spots","Most-Popular-Places"],
       popularFor: ["Photography", "Adventure", "Nature"]

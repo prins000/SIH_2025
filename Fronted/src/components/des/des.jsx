@@ -50,7 +50,7 @@ const Des = ({ mainCategory }) => {
                 <SwiperSlide key={dest._id}>
                   <div className="relative h-72 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
                     <img
-                      src={dest.image}
+                      src={dest.images[0]}
                       alt={dest.name}
                       className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
                     />
