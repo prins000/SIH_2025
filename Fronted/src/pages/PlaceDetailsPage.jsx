@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const PlaceDetailsPage = () => {
@@ -22,12 +22,29 @@ const PlaceDetailsPage = () => {
 
   return (
     <div>
-      <h1>Place Details: {place.name}</h1>
-        <p>{place.description}</p>
-        <img src={place.image} alt={place.name} style={{ width: '300px', height: '200px' }} />
-        <p>Location: {place.location}</p>
-        <p>Category: {place.category}</p>
-        <p>Rating: {place.rating}</p>   
+       <div className="flex flex-col">
+      {/* Hero Image with Overlay */}
+      <div className="relative w-full h-[60vh]">
+        <img
+          src={place.img}
+          alt={place.name}
+          className="w-full h-full object-cover rounded-b-3xl"
+        />
+        <div className="absolute inset-0 bg-black/40 rounded-b-3xl"></div>
+        <h1 className="absolute bottom-6 left-6 text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+          {place.name}
+        </h1>
+      </div>
+
+      {/* Description Section */}
+      <div className="max-w-4xl mx-auto p-6 text-center">
+        <h2 className="text-2xl font-semibold text-green-700 mb-4">
+          About {place.name}
+        </h2>
+        <p className="text-gray-700 text-lg leading-relaxed">{place.desc}</p>
+      </div>
+    </div>
+  
     </div>
   );
 };

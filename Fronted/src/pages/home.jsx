@@ -8,6 +8,7 @@ import Des from "../components/des/Des";
 import Adv from "../components/adven/Adv";
 import Cus from "../components/cuisine/Cus";
 import VideoCarousel from "../components/VideoCarousel";
+import SlideBar from "../components/SlideBar";
 
 const Home = () => {
   
@@ -43,7 +44,7 @@ const Home = () => {
       </div>
 
       <div className="slides ">
-        
+         <SlideBar/>
         <Des mainCategory="Most-Popular-Places"/>
         <Fes />
         <Adv/>
