@@ -37,7 +37,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Ranchi District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758273337/hudru-falls_gqkrcy.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758273336/7ybd9qb5lrmb1_jalhle.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758273336/the-hundru-falls-is-a-waterfall-located-in-ranchi-district-in-the-KKA51K_mzn1fd.jpg"],
       bestTimeToVisit: "July-October",
-      category: ["Waterfalls & Scenic Spots"],
+      category: ["Waterfalls-Scenic-Spots"],
       popularFor: ["Photography", "Picnic", "Nature Walks"]
     },
     {
@@ -48,7 +48,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Latehar District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758224296/unnamed_xmh5d7.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758224293/unnamed_2_tiekka.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758224291/unnamed_1_iuxh44.jpg"],
       bestTimeToVisit: "October – March",
-      category: ["Wildlife & National Parks"],
+      category: ["Wildlife-National-Parks","Most-Popular-Places"],
       popularFor: ["Wildlife Safari", "Eco Tourism", "Bird Watching"]
     },
     {
@@ -59,7 +59,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Latehar District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758221989/Screenshot_2025-09-16_232449_sxu5qq.png", "https://res.cloudinary.com/doh9wcybz/video/upload/v1758221988/netarhat_kaebnp.mp4", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758221986/netarhatt__jharkhand_buv93i.jpg"],
       bestTimeToVisit: "October – April",
-      category: ["Hills & Mountain Ranges"],
+      category: ["Hills-Mountain-Ranges","Most-Popular-Places"],
       popularFor: ["Trekking", "Sunset Views", "Camping"]
     },
     {
@@ -70,7 +70,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Deoghar District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758221834/d99b5cf9-292f-46bd-8a06-c9b7ce3bac32_kbrayq.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758221833/Ravaneshwar_Baba_Baijnath_Mahadev_btxshg.jpg"],
       bestTimeToVisit: "July (Shravan Mela), October – March",
-      category: ["Temples & Religious Places"],
+      category: ["Temples-Religious-Places"],
       popularFor: ["Pilgrimage", "Spirituality", "Architecture"]
     },
     {
@@ -81,7 +81,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Ranchi District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758221934/Majestic_Dassam_Falls_Ranchi_Jharkhand_gzqqyb.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758221931/Beautiful_Jonha_falls_ranchi_w7d4ma.jpg"],
       bestTimeToVisit: "Monsoon & Winter (July – December)",
-      category: ["Waterfalls & Scenic Spots"],
+      category: ["Waterfalls-Scenic-Spots"],
       popularFor: ["Nature", "Picnic", "Photography"]
     },
     {
@@ -90,9 +90,9 @@ app.get("/api/place/addData", async (req, res) => {
       history: "Patratu Valley has gained popularity over the years as a picturesque destination for travelers and adventure enthusiasts. The valley is named after the nearby Patratu Dam, which was constructed to provide water for industrial and agricultural purposes. The area has become a favorite spot for road trips due to its winding roads and beautiful scenery, attracting tourists looking for a blend of nature and adventure.",
       visitingHours: "Open all day",
       location: "Ranchi District, Jharkhand",
-      images: ["https://res.cloudinary.com/doh9wcybz/video/upload/v1758222055/patratu_valley_rtqib9.mp4", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222053/In_love_with_Patratu_Valley_India_obglql.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222050/4145d896-3065-4d5b-b8ed-732ff8563826_qyqqiv.jpg"],
+      images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758222053/In_love_with_Patratu_Valley_India_obglql.jpg","https://res.cloudinary.com/doh9wcybz/video/upload/v1758222055/patratu_valley_rtqib9.mp4", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222050/4145d896-3065-4d5b-b8ed-732ff8563826_qyqqiv.jpg"],
       bestTimeToVisit: "October – March",
-      category: ["Adventure & Outdoor Activities"],
+      category: ["Adventure-Outdoor-Activities"],
       popularFor: ["Road Trips", "Photography", "Camping"]
     },
     {
@@ -103,7 +103,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Celebrated across Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758222595/PTI09_25_2023_000235B_c2j5qr.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222592/karma-puja-2022_bq1ofc.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222590/hq720_kawuau.jpg"],
       bestTimeToVisit: "August – September",
-      category: ["Festivals & Cultural Events"],
+      category: ["Festivals-Cultural-Events"],
       popularFor: ["Dance", "Tribal Culture", "Folk Music"]
     },
     // {
@@ -123,7 +123,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Southern Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758271806/d15e0c73f97fe02eaafd28dfc88b4a0f_v2kuw8.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758271806/465096_jekpwn.webp", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758271805/tusu-festival-santhal-painting-a5-frame-paintings-351255_ioa8q7.jpg"],
       bestTimeToVisit: "January",
-      category: ["Festivals & Cultural Events"],
+      category: ["Festivals-Cultural-Events"],
       popularFor: ["Folk Songs", "Agriculture", "Cultural Celebrations"]
     },
     {
@@ -134,7 +134,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Rivers and lakes across Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758223564/5e86f537f8b7b4aed66e9c48b9227d4b_nr9pk3.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758223568/a045062805744a86fa90db21daa34238_ulzfx3.jpg"],
       bestTimeToVisit: "October – November",
-      category: ["Festivals & Cultural Events"],
+      category: ["Festivals-Cultural-Events"],
       popularFor: ["Rituals", "Devotion", "Cultural Significance"]
     },
     {
@@ -145,7 +145,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Latehar District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758270044/Betla_National_Park_safari_Palamau_Jharkhand_India_pymim0.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758270045/photo7_nkeihy.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758270048/palamau-images_ot63zu.jpg"],
       bestTimeToVisit: "November – April",
-      category: ["Wildlife & National Parks"],
+      category: ["Wildlife-National-Parks","Most-Popular-Places"],
       popularFor: ["Tiger Safari", "Wildlife Photography", "Nature Trails"]
     },
     {
@@ -156,7 +156,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Sahebganj District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758271895/udhwa-bird-sanctuary-2_oa9lwq.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758271896/white_pelicans_07_wvvwas.webp", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758271899/Wetland-area_sahhmr.jpg"],
       bestTimeToVisit: "November – February",
-      category: ["Wildlife & National Parks"],
+      category: ["Wildlife-National-Parks","Most-Popular-Places"],
       popularFor: ["Bird Watching", "Photography", "Nature"]
     },
     {
@@ -167,7 +167,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Latehar District, Jharkhand",
       images: [],
       bestTimeToVisit: "July – October",
-      category: ["Waterfalls & Scenic Spots"],
+      category: ["Waterfalls-Scenic-Spots","Most-Popular-Places"],
       popularFor: ["Photography", "Adventure", "Nature"]
     },
     {
@@ -178,7 +178,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "West Singhbhum District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758271600/sail-meghahatuburu-guest-house-kiriburu-base-camp-west-singhbhum-guest-house-kRGtvq6kEH_xclqpr.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758271599/Kiriburu-Jharkhand-e1545161039334_pjrpeo.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758271599/waterfall-harishankar_jm0utr.jpg"],
       bestTimeToVisit: "October – March",
-      category: ["Hills & Mountain Ranges"],
+      category: ["Hills-Mountain-Ranges"],
       popularFor: ["Sunset Views", "Scenic Beauty", "Photography"]
     },
     {
@@ -189,7 +189,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Dhanbad District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758270283/117138319_m4wyve.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758270283/117138319_m4wyve.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758270288/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nLzY0ZGZiM2IwZTU5YjQxOTViNzM0MjdhMmE2YjM4YWE5IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NDAsImhlaWdodCI6NjQwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJ0b0Zvcm1hdCI6ICJ3ZWJwIn19_kwsz11.webp"],
       bestTimeToVisit: "October – March",
-      category: ["Lakes & Dams"],
+      category: ["Lakes-Dams"],
       popularFor: ["Boating", "Picnic", "Photography"]
     },
     {
@@ -200,7 +200,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758222795/Dhuska1-scaled_efhpex.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222793/d21dajqo_dhuska_625x300_10_May_23_lwvgbz.webp"],
       bestTimeToVisit: "All year",
-      category: ["Cuisine & Traditional Food"],
+      category: ["Cuisine-Traditional-Food"],
       popularFor: ["Street Food", "Breakfast", "Traditional Taste"]
     },
     {
@@ -211,7 +211,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758222910/4_chilka_roti_1742405254_p7mdmf.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758222913/Chilka_Roti_Recipe_Jharkhand_Style_Rice_and_Lentil_Roti_kia4ml.jpg"],
       bestTimeToVisit: "All year",
-      category: ["Cuisine & Traditional Food"],
+      category: ["Cuisine-Traditional-Food"],
       popularFor: ["Traditional Dish", "Dinner", "Local Cuisine"]
     },
     // {
@@ -240,7 +240,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Gaya & Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758223456/images_qjum4p.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758223453/images_1_pbrpt2.jpg"],
       bestTimeToVisit: "January",
-      category: ["Cuisine & Traditional Food"],
+      category: ["Cuisine-Traditional-Food"],
       popularFor: ["Sweet Dish", "Festivals", "Winter Snack"]
     }
   ];
