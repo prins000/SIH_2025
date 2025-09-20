@@ -3,10 +3,10 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footbar";
 import bgImg from "../assets/SIH-IMG.png";
 import { TypeAnimation } from 'react-type-animation';
-import Fes from "../components/fes/Fes";
-import Des from "../components/des/Des";
-import Adv from "../components/adven/Adv";
-import Cus from "../components/cuisine/Cus";
+import Fes from "../components/fes/fes";
+import Des from "../components/des/des";
+import Adv from "../components/adven/adv";
+import Cus from "../components/cuisine/cus";
 import VideoCarousel from "../components/VideoCarousel";
 import SlideBar from "../components/SlideBar";
 
@@ -21,9 +21,9 @@ const Home = () => {
           backgroundImage: `url(${bgImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "100vh",
+         
         }}
-        className="relative  "
+        className="relative h-[40vh] md:h-[100vh] "
       >
         <Navbar />
 
@@ -44,13 +44,14 @@ const Home = () => {
       </div>
 
       <div className="slides ">
-         <SlideBar/>
+         
         <Des mainCategory="Most-Popular-Places"/>
+        <SlideBar/>
         <Fes />
         <Adv/>
         <Cus/>
         {/* <CategoryPage/> */}
-        <VideoCarousel/>
+       
       </div>
 
       <Footer/>
