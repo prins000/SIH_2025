@@ -37,7 +37,7 @@ app.get("/api/place/addData", async (req, res) => {
       location: "Ranchi District, Jharkhand",
       images: ["https://res.cloudinary.com/doh9wcybz/image/upload/v1758273337/hudru-falls_gqkrcy.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758273336/7ybd9qb5lrmb1_jalhle.jpg", "https://res.cloudinary.com/doh9wcybz/image/upload/v1758273336/the-hundru-falls-is-a-waterfall-located-in-ranchi-district-in-the-KKA51K_mzn1fd.jpg"],
       bestTimeToVisit: "July-October",
-      category: ["Waterfalls-Scenic-Spots"],
+      category: ["Waterfalls-Scenic-Spots","Adventure-Outdoor-Activities"],
       popularFor: ["Photography", "Picnic", "Nature Walks"]
     },
     {

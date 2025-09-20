@@ -1,40 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 
-const cuisines = [
-    {
-      name: "Dhuska",
-      img: "https://upload.wikimedia.org/wikipedia/commons/2/26/Dhuska_with_Aloo_Curry.jpg",
-      desc: "Deep-fried rice & lentil pancakes, usually served with spicy potato curry."
-    },
-    {
-      name: "Chilka Roti",
-      img: "https://www.holidify.com/images/cmsuploads/compressed/Chilka_Roti_20191216124929.jpg",
-      desc: "A soft roti made from rice flour, paired with vegetables or chutney."
-    },
-    {
-      name: "Rugra",
-      img: "https://www.holidify.com/images/cmsuploads/compressed/Rugra_20191216125003.jpg",
-      desc: "A rare wild mushroom delicacy, cooked with spices, unique to Jharkhand."
-    },
-    {
-      name: "Handia",
-      img: "https://www.holidify.com/images/cmsuploads/compressed/Handia_20191216124959.jpg",
-      desc: "A traditional rice beer made by tribal communities, known for its unique taste."
-    },
-    {
-      name: "Tilkut",
-      img: "https://upload.wikimedia.org/wikipedia/commons/7/74/Tilkut_from_Gaya.jpg",
-      desc: "A sweet made of sesame seeds & jaggery, popular during Makar Sankranti."
-    }
-  ];
-
-const Cus = () => {
+const Cus = ({ mainCategory }) => {
   const [loading, setLoading] = useState(true);
+  const [cuisines, setCuisines] = useState([]);
+
+  const navigate = useNavigate();
+
+
+  const category = mainCategory;
+
+  useEffect(() => {
+        setLoading(true);
+        fetch(`http://localhost:5000/api/category/${category}`)
+          .then(response => response.json())
+          .then(data => {
+            setCuisines(data);
+            setLoading(false);
+          })
+          .catch(error => {
+            console.error('Error fetching destinations:', error);
+            setLoading(false);
+          });
+      }, [category]);
+ 
 
   useEffect(() => {
     // Simulate loading time for cuisines
@@ -83,7 +77,7 @@ const Cus = () => {
                 <SwiperSlide key={index}>
                   <div className="bg-white h-80 rounded-2xl shadow-lg">
                     <img
-                      src={item.img}
+                      src={item.images[0]}
                       alt={item.name}
                       className="h-full w-full object-cover rounded-t-2xl"
                     />
@@ -103,7 +97,7 @@ const Cus = () => {
           {cuisines.map((item, index) => (
             <div key={index} className="min-w-[280px] max-w-sm bg-white rounded-2xl shadow-lg snap-center flex-shrink-0">
               <img
-                src={item.img}
+                src={item.images[0]}
                 alt={item.name}
                 className="h-60 w-full object-cover rounded-t-2xl"
               />

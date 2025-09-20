@@ -5,32 +5,31 @@ import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const festivals = [
-  {
-    name: "Karma Festival",
-    img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Karma_Festival_Dance.jpg",
-    desc: "A tribal harvest festival with dance & music under the sacred Karma tree.",
-  },
-  {
-    name: "Sarhul",
-    img: "https://upload.wikimedia.org/wikipedia/commons/9/90/Sarhul_Festival.jpg",
-    desc: "Spring festival with flowers, rituals, and tribal dances.",
-  },
-  {
-    name: "Tusu Festival",
-    img: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Tusu_Festival.jpg",
-    desc: "Harvest festival celebrated with folk songs and cultural performances.",
-  },
-  {
-    name: "Chhath Puja",
-    img: "https://upload.wikimedia.org/wikipedia/commons/5/58/Chhath_Puja_Ranchi.jpg",
-    desc: "Devotees worship the Sun God with rituals at rivers and ponds.",
-  },
-];
 
-const Fes = () => {
+const Fes = ({mainCategory}) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [festivals, setFestivals] = useState([]);
+
+  const category = mainCategory;
+  console.log(category);
+  
+  useEffect(() => {
+      setLoading(true);
+      fetch(`http://localhost:5000/api/category/${category}`)
+        .then(response => response.json())
+        .then(data => {
+          setFestivals(data);
+          console.log(data);
+          setLoading(false);
+        })
+        .catch(error => {
+          console.error('Error fetching destinations:', error);
+          setLoading(false);
+        });
+    }, [category]);
+
+
 
   useEffect(() => {
     // Simulate loading time for festivals
@@ -78,8 +77,6 @@ const Fes = () => {
           Festivals 
         </h2>
 
-      
-
         {/* Mobile Swiper */}
         <div className="md:hidden h-full">
           {loading ? (
@@ -109,7 +106,7 @@ const Fes = () => {
                 <SwiperSlide key={index}>
                   <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg group">
                     <img
-                      src={fest.img}
+                      src={fest.images[0]}
                       alt={fest.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
@@ -129,7 +126,7 @@ const Fes = () => {
         </div>
 
         <button 
-          onClick={() => navigate('/festivals')} 
+          onClick={() => navigate(`/category/${category}/Show-All-Places`)} 
           className="block relative md:left-[40%] text-[#3b3b3b] hover:text-black mt-5 mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
         >
           <p className="hover:scale-105 relative">View All</p>
@@ -165,7 +162,7 @@ const Fes = () => {
                 <SwiperSlide key={index}>
                   <div className="relative h-full rounded-2xl overflow-hidden shadow-lg group">
                     <img
-                      src={fest.img}
+                      src={fest.images[0]}
                       alt={fest.name}
                       className="w-full h-96  object-cover group-hover:scale-105 transition duration-500"
                     />

@@ -26,7 +26,7 @@ const PlaceDetailsPage = () => {
       {/* Hero Image with Overlay */}
       <div className="relative w-full h-[60vh]">
         <img
-          src={place.img}
+          src={place.images[0]}
           alt={place.name}
           className="w-full h-full object-cover rounded-b-3xl"
         />
@@ -41,7 +41,7 @@ const PlaceDetailsPage = () => {
         <h2 className="text-2xl font-semibold text-green-700 mb-4">
           About {place.name}
         </h2>
-        <p className="text-gray-700 text-lg leading-relaxed">{place.desc}</p>
+        <p className="text-gray-700 text-lg leading-relaxed">{place.aboutThePlace}</p>
       </div>
     </div>
   

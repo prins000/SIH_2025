@@ -47,9 +47,9 @@ const Home = () => {
          
         <Des mainCategory="Most-Popular-Places"/>
         <SlideBar/>
-        <Fes />
-        <Adv/>
-        <Cus/>
+        <Fes mainCategory="Festivals-Cultural-Events"/>
+        <Adv mainCategory="Adventure-Outdoor-Activities"/>
+        <Cus mainCategory="Cuisine-Traditional-Food"/>
         {/* <CategoryPage/> */}
        
       </div>

@@ -92,7 +92,7 @@ const Des = ({ mainCategory }) => {
           </div>
 
          <button 
-          onClick={() => navigate('/festivals')} 
+          onClick={() => navigate(`/category/${category}/Show-All-Places`)} 
           className="block relative md:left-[40%] text-[#3b3b3b] hover:text-black mt-5 mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
         >
           <p className="hover:scale-105 relative">View All</p>
@@ -103,7 +103,7 @@ const Des = ({ mainCategory }) => {
             {destinations.slice(0, 3).map((dest) => (
               <div key={dest._id} className="relative h-full rounded-2xl overflow-hidden shadow-lg group cursor-pointer  ">
                 <img
-                  src="https://plus.unsplash.com/premium_photo-1757100708031-1dc4c6b32596?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D"
+                  src={dest.images[0]}
                   alt={dest.name}
                   className="absolute inset-0 w-full h-full  object-cover transform group-hover:scale-110 transition duration-500"
                 />

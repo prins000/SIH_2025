@@ -5,44 +5,27 @@ import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
-
-const adventurePlaces = [
-  {
-    name: "Palamau Tiger Reserve",
-    img: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Betla_National_Park_Jharkhand.jpg",
-    desc: "One of India’s first tiger reserves, home to tigers, leopards, elephants, and rich wilderness."
-  },
-  {
-    name: "Udhwa Bird Sanctuary",
-    img: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Openbill_stork_udhuwa_jharkhand.jpg",
-    desc: "Jharkhand’s only bird sanctuary, famous for migratory birds and serene lakes."
-  },
-  {
-    name: "Lodh Falls (Burha Ghagh)",
-    img: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Lodh_Falls_Jharkhand.jpg",
-    desc: "The highest waterfall in Jharkhand, surrounded by forests and adventurous trekking trails."
-  },
-  {
-    name: "Kiriburu & Meghahatuburu",
-    img: "https://upload.wikimedia.org/wikipedia/commons/3/32/Kiriburu_Mines_View_Jharkhand.jpg",
-    desc: "Twin hill stations offering panoramic forest views and a cool climate perfect for eco-tourism."
-  },
-  {
-    name: "Hundru Falls",
-    img: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Hundru_Falls_Jharkhand.jpg",
-    desc: "A spectacular 320 ft waterfall, ideal for trekking, photography and picnics."
-  },
-  {
-    name: "Topchanchi Lake",
-    img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Topchanchi_lake.jpg",
-    desc: "A peaceful lake surrounded by forests, famous for boating and eco-tourism."
-  }
-];
-
-const Adv = () => {
+const Adv = ({ mainCategory }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [adventurePlaces, setAdventurePlaces] = useState([]);
+
+  const category = mainCategory;
+
+  useEffect(() => {
+      setLoading(true);
+      fetch(`http://localhost:5000/api/category/${category}`)
+        .then(response => response.json())
+        .then(data => {
+          setAdventurePlaces(data);
+          setLoading(false);
+        })
+        .catch(error => {
+          console.error('Error fetching destinations:', error);
+          setLoading(false);
+        });
+    }, [category]);
+
 
   useEffect(() => {
     // Simulate loading time for adventure places
@@ -92,7 +75,7 @@ const Adv = () => {
                 <SwiperSlide key={index}>
                   <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
                     <img
-                      src={place.img}
+                      src={place.images[0]}
                       alt={place.name}
                       className="h-full64 w-full object-cover"
                     />
@@ -109,7 +92,7 @@ const Adv = () => {
         </div>
         
         <button 
-          onClick={() => navigate('/adventure')} 
+          onClick={() => navigate(`/category/${category}/Show-All-Places`)} 
           className="block relative md:left-[45%] text-[#3b3b3b] hover:text-black mt-4 mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
         >
           <p className="hover:scale-105 relative">View All</p>
@@ -120,7 +103,7 @@ const Adv = () => {
           {adventurePlaces.map((place, index) => (
             <div key={index} className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
-                src={place.img}
+                src={place.images[0]}
                 alt={place.name}
                 className="h-64 w-full object-cover hover:scale-105 transition-transform duration-500"
               />
