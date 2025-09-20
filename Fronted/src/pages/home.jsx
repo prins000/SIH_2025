@@ -16,15 +16,11 @@ const Home = () => {
   return (
     <div>
 
-      <div
-        style={{
-          backgroundImage: `url(${bgImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-         
-        }}
-        className="relative h-[40vh] md:h-[100vh] "
-      >
+    <div class="relative w-full h-screen overflow-hidden">
+       
+
+  
+    <div class="absolute inset-0 bg-black/50"></div>
         <Navbar />
 
           <h1 className="text-white text-3xl sm:text-5xl md:text-6xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center px-4">
@@ -38,8 +34,8 @@ const Home = () => {
         wrapper="span"
         speed={60}
         repeat={Infinity}
-      />
-    </h1>
+        />
+       </h1>
 
       </div>
 
