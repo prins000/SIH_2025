@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div>
 
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full  h-[55vh] sm:h-[75vh] md:h-screen overflow-hidden">
   <video
     className="absolute top-0 left-0 w-full h-full object-cover"
     src="/jharkhand.mp4"
@@ -22,11 +22,8 @@ const Home = () => {
     muted
     loop
     playsInline
-    style={{ objectPosition: "bottom " }}
+    style={{ objectPosition: "bottom right " }}
   />
-
-
-
         
         <Navbar />
 

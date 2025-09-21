@@ -38,9 +38,9 @@ const Adv = ({ mainCategory }) => {
 
   return (
     <div>
-        <section id="adventure" className="py-16 from-green-50 to-green-100">
+        <section id="adventure" className="py-16  bg-[#ffedcb]">
       <div className="max-w-7xl h-[60%] mx-auto px-6">
-        <h2 className="text-3xl lg:text-5xl font-bold text-center text-green-800 mb-12">
+        <h2 className="text-3xl lg:text-5xl font-bold text-center text-yellow-800 mb-12">
            Adventure & Eco-Tourism
         </h2>
 
@@ -73,7 +73,9 @@ const Adv = ({ mainCategory }) => {
             >
               {adventurePlaces.map((place, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
+                  <div
+                   onClick={() => navigate(`/places/${place._id}`)}
+                  className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
                     <img
                       src={place.images[0]}
                       alt={place.name}
@@ -101,7 +103,7 @@ const Adv = ({ mainCategory }) => {
         {/* Desktop Grid */}
         <div className="hidden md:grid md:grid-cols-2 gap-10">
           {adventurePlaces.map((place, index) => (
-            <div key={index} className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div key={index} className=" group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
                 src={place.images[0]}
                 alt={place.name}
@@ -112,7 +114,13 @@ const Adv = ({ mainCategory }) => {
                 <h3 className="text-2xl font-bold mb-2">{place.name}</h3>
                 <p className="text-sm opacity-90">{place.desc}</p>
               </div>
+               <div 
+                onClick={() => navigate(`/places/${place._id}`)}
+                className="absolute right-4 bottom-3 text-white text-xl bg-amber-500 rounded-lg px-4 py-1.5 translate-y-5 group-hover:translate-0 opacity-0 group-hover:opacity-100 transition-all duration-300" 
+                ><p>Visit</p></div>
             </div>
+
+           
           ))}
         </div>
       </div>

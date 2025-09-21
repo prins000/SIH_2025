@@ -39,7 +39,7 @@ const Des = ({ mainCategory }) => {
  
   return (
     
-      <section id="places" className="bg-gradient-to-b md:h-[110vh] h-[60%] from-green-50 to-green-100 py-12 ">
+      <section id="places" className="bg-gradient-to-b md:h-[110vh] h-[60%] bg-[#E6F4EA] py-12 ">
           <h2 className="text-3xl lg:text-5xl font-bold text-center text-green-900 mb-7 md:mb-10">
             Popular Destinations
           </h2>
@@ -73,7 +73,9 @@ const Des = ({ mainCategory }) => {
               >
                 {destinations.map((dest) => (
                   <SwiperSlide key={dest._id}>
-                    <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div
+                    onClick={() => navigate(`/places/${dest._id}`)}
+                    className="relative h-80 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
                       <img
                         src={dest.images[0]}
                         alt={dest.name}
@@ -93,7 +95,7 @@ const Des = ({ mainCategory }) => {
 
          <button 
           onClick={() => navigate(`/category/${category}/Show-All-Places`)} 
-          className="block relative md:left-[40%] text-[#3b3b3b] hover:text-black mt-5 mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
+          className="block relative md:left-[40%] text-[#3b3b3b] hover:text-black  mt-8 md:mt-4 md:mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
         >
           <p className="hover:scale-105 relative">View All</p>
         </button>

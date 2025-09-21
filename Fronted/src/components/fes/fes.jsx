@@ -71,9 +71,11 @@ const Fes = ({mainCategory}) => {
          transform: scale(1.05);
        }
      `}</style>
-     <section id="festivals" className="py-16  bg-green-50">
+     <section id="festivals"
+     
+     className="py-16  bg-[#ffeadf]">
       <div className="max-w-7xl mx-auto px-6  h-[60%] md:h-[80vh]">
-        <h2 className="text-3xl lg:text-5xl font-bold text-green-800 mb-12 text-center">
+        <h2 className="text-3xl lg:text-5xl font-bold text-orange-800 mb-12 text-center">
           Festivals 
         </h2>
 
@@ -81,7 +83,7 @@ const Fes = ({mainCategory}) => {
         <div className="md:hidden h-full">
           {loading ? (
             <div className="flex items-center justify-center h-full">
-              <div className="text-green-600">Loading festivals...</div>
+              <div className="text-orange-600">Loading festivals...</div>
             </div>
           ) : (
             <Swiper
@@ -104,7 +106,9 @@ const Fes = ({mainCategory}) => {
             >
               {festivals.map((fest, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg group">
+                  <div
+                   onClick={() => navigate(`/places/${fest._id}`)}
+                  className="relative h-80 rounded-2xl overflow-hidden shadow-lg group">
                     <img
                       src={fest.images[0]}
                       alt={fest.name}
@@ -114,9 +118,7 @@ const Fes = ({mainCategory}) => {
                     <div className="absolute bottom-4 left-4 right-4 text-white">
                       <h3 className="text-xl font-semibold">{fest.name}</h3>
                       <p className="text-sm mt-1 text-gray-200">{fest.desc}</p>
-                      <button className="mt-3 px-2 py-1 bg-green-600 hover:bg-green-700 text-white rounded-lg">
-                        Explore
-                      </button>
+                     
                     </div>
                   </div>
                 </SwiperSlide>
@@ -127,9 +129,9 @@ const Fes = ({mainCategory}) => {
 
         <button 
           onClick={() => navigate(`/category/${category}/Show-All-Places`)} 
-          className="block relative md:left-[40%] text-[#3b3b3b] hover:text-black mt-5 mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
+          className="block relative md:left-[40%] text-[#3b3b3b] hover:text-black mt-8 md:mt-4 md:mb-8 mx-auto bg-transparent border-2 px-6 py-1.5 rounded-lg transition-all duration-300 hover:scale-105 hover:border-green-600"
         >
-          <p className="hover:scale-105 relative">View All</p>
+          <p className="hover:scale-105 relative ">View All</p>
         </button>
 
         {/* Desktop Continuous Swiper */}
@@ -170,7 +172,9 @@ const Fes = ({mainCategory}) => {
                     <div className="absolute bottom-4 left-4 right-4 text-white">
                       <h3 className="text-xl font-semibold">{fest.name}</h3>
                       <p className="text-sm mt-1 text-gray-200">{fest.desc}</p>
-                      <button className="mt-3 px-3 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+                      <button 
+                      onClick={() => navigate(`/places/${fest._id}`)}
+                      className="mt-3 px-3 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
                         Explore
                       </button>
                     </div>
