@@ -103,7 +103,7 @@ const Cus = ({ mainCategory }) => {
               />
               <div className="p-4">
                 <h3 className="text-xl font-bold text-gray-800">{item.name}</h3>
-                <p className="text-gray-600 text-sm mt-2">{item.desc}</p>
+                <p className="text-gray-600 text-sm mt-2">{item.description}</p>
               </div>
             </div>
           ))}
